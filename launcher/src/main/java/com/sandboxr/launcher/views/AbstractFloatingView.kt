@@ -93,7 +93,7 @@ abstract class AbstractFloatingView @JvmOverloads constructor(
 
         @JvmStatic
         fun <T : Context> closeOpenViews(activityContext: T, animate: Boolean, type: Int) {
-            val dragLayer = (activityContext as? ActivityContext)?.dragLayer ?: return
+            val dragLayer = (activityContext as? ActivityContext)?.getDragLayer() ?: return
             for (i in dragLayer.childCount - 1 downTo 0) {
                 val child = dragLayer.getChildAt(i)
                 if (child is AbstractFloatingView && child.isOpen && child.isOfType(type)) {
