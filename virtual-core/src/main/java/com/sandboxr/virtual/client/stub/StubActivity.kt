@@ -181,7 +181,7 @@ open class StubActivity : FragmentActivity() {
                 val taskDesc = android.app.ActivityManager.TaskDescription.Builder()
                     .setLabel("$label (${env.name})")
                     .apply {
-                        if (icon != null) setIcon(icon)
+                        if (icon != null) setIcon(android.graphics.drawable.Icon.createWithBitmap(icon))
                         if (env.color != 0L) setPrimaryColor(env.color.toInt())
                     }
                     .build()
