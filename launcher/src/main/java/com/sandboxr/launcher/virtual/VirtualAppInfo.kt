@@ -65,7 +65,7 @@ data class VirtualAppInfo(
         val component = ComponentName(packageName, mainActivity)
         val targetIntent = Intent(Intent.ACTION_MAIN).apply {
             addCategory(Intent.CATEGORY_LAUNCHER)
-            component = component
+            this.component = component
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or
                     Intent.FLAG_ACTIVITY_NEW_DOCUMENT or
                     Intent.FLAG_ACTIVITY_MULTIPLE_TASK
@@ -82,9 +82,7 @@ data class VirtualAppInfo(
                     Intent.FLAG_ACTIVITY_MULTIPLE_TASK
         }
 
-        val appInfo = AppInfo(context, component, null)
-        appInfo.title = label
-        appInfo.intent = launchIntent
+        val appInfo = AppInfo(component, label, android.os.Process.myUserHandle(), launchIntent)
         if (iconBitmap != null) {
             appInfo.bitmap = com.sandboxr.launcher.icons.BitmapInfo.fromBitmap(iconBitmap)
         }
