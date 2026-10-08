@@ -18,38 +18,39 @@
 package com.sandboxr.launcher.popup
 
 import com.sandboxr.launcher.LauncherSettings
-import com.android.launcher3.logging.StatsLogManager
+import com.android.launcher3.logging.StatsLogManager as PlatformStatsLogManager
+import com.sandboxr.launcher.logging.StatsLogManager
 
 enum class PopupEvent {
     OPEN,
     CLOSE,
 }
 
-fun logEvent(statsLogManager: StatsLogManager, itemType: Int, event: PopupEvent) {
+fun logEvent(statsLogManager: com.sandboxr.launcher.logging.StatsLogManager, itemType: Int, event: PopupEvent) {
     when (event) {
         PopupEvent.OPEN ->
             when (itemType) {
                 LauncherSettings.Favorites.ITEM_TYPE_APP_GROUP ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_PAIR_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_PAIR_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_FOLDER ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_OPEN_FOLDER_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_OPEN_FOLDER_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_OPEN_WIDGET_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_OPEN_WIDGET_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_APPLICATION ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT ->
                     statsLogManager
                         .logger()
                         .log(
-                            StatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_SHORTCUT_LONG_PRESS_MENU
+                            PlatformStatsLogManager.LauncherEvent.LAUNCHER_OPEN_APP_SHORTCUT_LONG_PRESS_MENU
                         )
             }
         PopupEvent.CLOSE ->
@@ -57,24 +58,24 @@ fun logEvent(statsLogManager: StatsLogManager, itemType: Int, event: PopupEvent)
                 LauncherSettings.Favorites.ITEM_TYPE_APP_GROUP ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_CLOSE_APP_PAIR_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_CLOSE_APP_PAIR_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_FOLDER ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_CLOSE_FOLDER_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_CLOSE_FOLDER_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_CLOSE_WIDGET_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_CLOSE_WIDGET_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_APPLICATION ->
                     statsLogManager
                         .logger()
-                        .log(StatsLogManager.LauncherEvent.LAUNCHER_CLOSE_APP_LONG_PRESS_MENU)
+                        .log(PlatformStatsLogManager.LauncherEvent.LAUNCHER_CLOSE_APP_LONG_PRESS_MENU)
                 LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT ->
                     statsLogManager
                         .logger()
                         .log(
-                            StatsLogManager.LauncherEvent
+                            PlatformStatsLogManager.LauncherEvent
                                 .LAUNCHER_CLOSE_APP_SHORTCUT_LONG_PRESS_MENU
                         )
             }
