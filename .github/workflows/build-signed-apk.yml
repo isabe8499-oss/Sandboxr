@@ -24,28 +24,10 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3
 
-      - name: Locate Android SDK tools
-        shell: bash
-        run: |
-          set -e
-          if command -v sdkmanager >/dev/null 2>&1; then
-            echo "sdkmanager=$(command -v sdkmanager)" >> "$GITHUB_ENV"
-          elif [ -x "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" ]; then
-            echo "sdkmanager=$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" >> "$GITHUB_ENV"
-          elif [ -x "/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager" ]; then
-            echo "sdkmanager=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager" >> "$GITHUB_ENV"
-          else
-            SDKMANAGER="$(find /usr/local/lib/android /opt -type f -name sdkmanager 2>/dev/null | head -1 || true)"
-            test -n "$SDKMANAGER"
-            echo "sdkmanager=$SDKMANAGER" >> "$GITHUB_ENV"
-          fi
-
-      - name: Install Android SDK 37
-        shell: bash
-        run: |
-          set -e
-          "$sdkmanager" --sdk_root="$ANDROID_HOME" --licenses >/dev/null || true
-          "$sdkmanager" --sdk_root="$ANDROID_HOME" "platforms;android-37" "build-tools;37.0.0"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: "platforms;android-36 build-tools;36.0.0"
 
       - name: Build release APK
         run: ./gradlew :app:assembleRelease --no-daemon --stacktrace
