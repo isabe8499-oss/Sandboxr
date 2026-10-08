@@ -17,7 +17,7 @@
 package com.sandboxr.launcher.popup
 
 import android.view.View
-import com.android.launcher3.logging.StatsLogManager
+import com.sandboxr.launcher.logging.StatsLogManager
 import com.sandboxr.launcher.DeviceProfile
 import com.sandboxr.launcher.Launcher
 import com.sandboxr.launcher.Workspace
