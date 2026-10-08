@@ -79,7 +79,15 @@ open class StatsLogManager @AssistedInject constructor(
         fun withCardinality(cardinality: Int): StatsLogger = this
         fun withEditText(editText: String?): StatsLogger = this
         fun log(event: EventEnum)
+        fun log(event: com.android.launcher3.logging.StatsLogManager.EventEnum) {
+            log(object : EventEnum {
+                override val id: Int = event.id
+            })
+        }
         fun sendToInteractionJankMonitor(event: EventEnum, v: View?) {}
+        fun sendToInteractionJankMonitor(event: com.android.launcher3.logging.StatsLogManager.EventEnum, v: View?) {
+            log(event)
+        }
     }
 
     interface StatsLatencyLogger {
