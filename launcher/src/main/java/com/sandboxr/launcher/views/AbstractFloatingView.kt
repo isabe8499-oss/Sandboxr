@@ -22,7 +22,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
-import com.sandboxr.launcher.touch.TouchController
+import com.sandboxr.launcher.util.TouchController
 
 /**
  * Base class for views that float on top of the launcher UI (folders, context menus,
@@ -76,7 +76,7 @@ abstract class AbstractFloatingView @JvmOverloads constructor(
 
         @JvmStatic
         fun <T : Context> getOpenView(activityContext: T, type: Int): AbstractFloatingView? {
-            val dragLayer = (activityContext as? ActivityContext)?.dragLayer ?: return null
+            val dragLayer = (activityContext as? ActivityContext)?.getDragLayer() ?: return null
             for (i in dragLayer.childCount - 1 downTo 0) {
                 val child = dragLayer.getChildAt(i)
                 if (child is AbstractFloatingView && child.isOpen && (child.isOfType(type))) {
