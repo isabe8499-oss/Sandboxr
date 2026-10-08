@@ -32,9 +32,9 @@ javaxInject = "1"
 guava = "33.4.8-android"
 
 # SDK Versions
-compileSdk = "37"
+compileSdk = "36"
 minSdk = "29"
-targetSdk = "37"
+targetSdk = "36"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
