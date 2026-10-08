@@ -35,7 +35,7 @@ open class QuickstepLauncher : Launcher() {
         private const val TAG = "QuickstepLauncher"
     }
 
-    private var mRecentsView: RecentsView<QuickstepLauncher>? = null
+    private var mRecentsView: RecentsView? = null
     private val sysUiTracker = SysUIConnectionTracker.get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,16 +45,15 @@ open class QuickstepLauncher : Launcher() {
 
     override fun setupViews() {
         super.setupViews()
-        val recents = mOverviewPanel as? RecentsView<QuickstepLauncher>
+        val recents = mOverviewPanel as? RecentsView
         mRecentsView = recents
     }
 
-    open fun getRecentsView(): RecentsView<QuickstepLauncher>? = mRecentsView
+    open fun getRecentsView(): RecentsView? = mRecentsView
 
     override fun onStateSetStart(state: LauncherState) {
         super.onStateSetStart(state)
         if (state == LauncherState.OVERVIEW) {
-            mRecentsView?.updateEmptyMessage()
         }
     }
 
