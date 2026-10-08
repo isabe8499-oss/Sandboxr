@@ -2,6 +2,8 @@ package com.ujwal.sandboxr
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
+import android.content.res.Configuration
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabaseCorruptException
 import android.os.Bundle
