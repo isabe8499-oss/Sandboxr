@@ -52,7 +52,7 @@ class EnvironmentOverlayView @JvmOverloads constructor(
     init {
         val composeView = ComposeView(context).apply {
             setContent {
-                SandboxrTheme(isDark = true) {
+                SandboxrTheme(darkTheme = true) {
                     EnvironmentOverlayContent()
                 }
             }
