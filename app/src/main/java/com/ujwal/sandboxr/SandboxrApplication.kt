@@ -31,6 +31,14 @@ import java.util.Locale
  */
 class SandboxrApplication : LauncherApplication() {
 
+    override fun attachBaseContext(base: Context) {
+        val ptBr = Locale("pt", "BR")
+        Locale.setDefault(ptBr)
+        val config = Configuration(base.resources.configuration)
+        config.setLocale(ptBr)
+        super.attachBaseContext(base.createConfigurationContext(config))
+    }
+
     companion object {
         private const val TAG = "SandboxrApp"
         const val SENTINEL_DIR = "sentinels"
