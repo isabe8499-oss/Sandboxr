@@ -32,3 +32,11 @@
 -dontwarn android.window.**
 -dontwarn android.support.**
 -dontwarn org.apache.http.**
+# This launcher library is consumed by :app. Its standalone R8 pass cannot see
+# all cross-module references (for example LawnchairAppLoader instantiated by
+# MainActivity), so shrinking these packages removes runtime classes and crashes
+# the app with NoClassDefFoundError. Preserve launcher runtime and integration API.
+-keep class com.sandboxr.launcher.** { *; }
+-keep class com.android.launcher3.** { *; }
+-keep class com.android.quickstep.** { *; }
+-keep class com.android.systemui.shared.** { *; }
