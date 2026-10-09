@@ -29,6 +29,23 @@ jobs:
         with:
           packages: "platforms;android-36 build-tools;36.0.0"
 
+      - name: Install required Android NDK (retry transient download failures)
+        shell: bash
+        run: |
+          set -euo pipefail
+          NDK_VERSION="28.2.13676358"
+          for attempt in 1 2 3; do
+            echo "Installing Android NDK $NDK_VERSION (attempt $attempt/3)"
+            if sdkmanager --install "ndk;$NDK_VERSION" && test -d "$ANDROID_HOME/ndk/$NDK_VERSION"; then
+              echo "NDK $NDK_VERSION installed successfully"
+              exit 0
+            fi
+            echo "NDK installation failed on attempt $attempt"
+            if [ "$attempt" -lt 3 ]; then sleep 10; fi
+          done
+          echo "Unable to install NDK $NDK_VERSION after 3 attempts" >&2
+          exit 1
+
       - name: Build release APK
         run: ./gradlew :app:assembleRelease --no-daemon --stacktrace
 
