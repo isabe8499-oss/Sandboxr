@@ -1,5 +1,8 @@
 # ==============================================================================
 # Consumer ProGuard Rules for Sandboxr Launcher Library
+
+# Required superclass of app/src/main/.../SandboxrApplication; keep it from R8 shrinking/renaming.
+-keep class com.sandboxr.launcher.LauncherApplication { *; }
 # Exported to consumer modules (e.g. :app)
 # ==============================================================================
 
