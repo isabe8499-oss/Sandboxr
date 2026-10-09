@@ -112,7 +112,7 @@ fun EnvironmentsTab(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = "SANDBOX CONTAINERS",
+                    text = "AMBIENTES ISOLADOS",
                     style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
                     color = SandboxrColors.TextSecondaryDark
                 )
@@ -132,7 +132,7 @@ fun EnvironmentsTab(
                 }
             }
 
-            // Quick "+ Add Container"
+            // Quick "+ Adicionar ambiente"
             Row(
                 modifier = Modifier
                     .clip(RoundedCornerShape(8.dp))
@@ -148,7 +148,7 @@ fun EnvironmentsTab(
                 )
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
-                    text = "New",
+                    text = "Novo",
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = SandboxrColors.PrimaryAccent
@@ -184,7 +184,7 @@ fun EnvironmentsTab(
                 onValueChange = onSearchQueryChange,
                 placeholder = {
                     Text(
-                        text = "Search in ${activeEnvironment?.displayName ?: "apps"}...",
+                        text = "Pesquisar em ${activeEnvironment?.displayName ?: "apps"}...",
                         color = SandboxrColors.TextTertiaryDark,
                         fontSize = 13.sp
                     )
@@ -273,7 +273,7 @@ fun EnvironmentsTab(
                         )
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(
-                            text = "Clone",
+                            text = "Clonar",
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Medium,
                             color = SandboxrColors.TextPrimaryDark
@@ -295,7 +295,7 @@ fun EnvironmentsTab(
         ) {
             val envName = activeEnvironment?.displayName ?: "System"
             Text(
-                text = "$envName (${apps.size} installed)",
+                text = "$envName (${apps.size} instalados)",
                 style = SandboxrTheme.typography.label,
                 color = SandboxrColors.TextSecondaryDark
             )
@@ -376,7 +376,7 @@ fun EnvironmentsTab(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = if (searchQuery.isNotEmpty()) "No matching apps found" else "No applications installed",
+                            text = if (searchQuery.isNotEmpty()) "Nenhum app correspondente encontrado" else "Nenhum aplicativo instalado",
                             style = SandboxrTheme.typography.body,
                             color = SandboxrColors.TextSecondaryDark
                         )
@@ -470,7 +470,7 @@ private fun EmptyContainerState(
                 Spacer(modifier = Modifier.height(14.dp))
 
                 Text(
-                    text = "Pure Slate Sandbox",
+                    text = "Ambiente isolado limpo",
                     style = SandboxrTheme.typography.title,
                     color = SandboxrColors.TextPrimaryDark
                 )
@@ -478,7 +478,7 @@ private fun EmptyContainerState(
                 Spacer(modifier = Modifier.height(6.dp))
 
                 Text(
-                    text = "This container has zero OEM telemetry and zero bloatware. Install an APK directly or clone an app from System.",
+                    text = "Este ambiente não inclui telemetria do fabricante nem aplicativos desnecessários. Instale um APK ou clone um app do sistema.",
                     style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
                     color = SandboxrColors.TextSecondaryDark,
                     textAlign = TextAlign.Center,
@@ -497,7 +497,7 @@ private fun EmptyContainerState(
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f).height(44.dp)
                     ) {
-                        Text("Clone System App", fontSize = 12.sp)
+                        Text("Clonar app do sistema", fontSize = 12.sp)
                     }
 
                     Button(
@@ -506,7 +506,7 @@ private fun EmptyContainerState(
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f).height(44.dp)
                     ) {
-                        Text("Install APK", fontSize = 12.sp, color = Color.White)
+                        Text("Instalar APK", fontSize = 12.sp, color = Color.White)
                     }
                 }
             }
@@ -562,7 +562,7 @@ internal fun AppOptionsSheet(
             ) {
                 PhosphorIconView(icon = PhosphorIcon.CHECK, color = SandboxrColors.Success, size = 18.dp)
                 Spacer(modifier = Modifier.width(12.dp))
-                Text("Launch Application", color = SandboxrColors.TextPrimaryDark)
+                Text("Abrir aplicativo", color = SandboxrColors.TextPrimaryDark)
             }
 
             if (app.isSystemApp) {
@@ -577,7 +577,7 @@ internal fun AppOptionsSheet(
                 ) {
                     PhosphorIconView(icon = PhosphorIcon.GEAR, color = SandboxrColors.PrimaryAccent, size = 18.dp)
                     Spacer(modifier = Modifier.width(12.dp))
-                    Text("App Info & OS Permissions", color = SandboxrColors.TextPrimaryDark)
+                    Text("Informações do app e permissões do Android", color = SandboxrColors.TextPrimaryDark)
                 }
             } else {
                 // Uninstall from container
@@ -591,7 +591,7 @@ internal fun AppOptionsSheet(
                 ) {
                     PhosphorIconView(icon = PhosphorIcon.TRASH, color = SandboxrColors.Danger, size = 18.dp)
                     Spacer(modifier = Modifier.width(12.dp))
-                    Text("Uninstall from this Container", color = SandboxrColors.Danger)
+                    Text("Desinstalar deste ambiente", color = SandboxrColors.Danger)
                 }
             }
 

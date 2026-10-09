@@ -56,18 +56,18 @@ fun VaultTab(
     ) {
         // Section Header
         Text(
-            text = "ENCRYPTED ENVIRONMENT VAULT",
+            text = "COFRE CRIPTOGRAFADO DE AMBIENTES",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.PrimaryAccent
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = ".senv Encrypted Containers",
+            text = "Ambientes criptografados .senv",
             style = SandboxrTheme.typography.title,
             color = SandboxrColors.TextPrimaryDark
         )
         Text(
-            text = "AES-256-GCM encrypted bundles with PBKDF2 key derivation. Package APKs and isolated storage are backed up without leaking to host OS.",
+            text = "Pacotes criptografados com AES-256-GCM e derivação de chave PBKDF2. Faça backup dos APKs e dos dados isolados sem expô-los ao sistema anfitrião.",
             style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
             color = SandboxrColors.TextSecondaryDark,
             modifier = Modifier.padding(top = 2.dp, bottom = 16.dp)
@@ -101,12 +101,12 @@ fun VaultTab(
                     Spacer(modifier = Modifier.width(12.dp))
                     Column {
                         Text(
-                            text = "Vault Backup & Restore",
+                            text = "Backup e restauração do cofre",
                             style = SandboxrTheme.typography.body.copy(fontWeight = FontWeight.SemiBold),
                             color = SandboxrColors.TextPrimaryDark
                         )
                         Text(
-                            text = "Zero-knowledge container encapsulation",
+                            text = "Proteção dos ambientes sem expor seus dados",
                             fontSize = 12.sp,
                             color = SandboxrColors.TextSecondaryDark
                         )
@@ -117,25 +117,25 @@ fun VaultTab(
 
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Button(
-                        onClick = { onNotice("Select an environment card below to export as .senv") },
+                        onClick = { onNotice("Selecione abaixo um ambiente para exportar como .senv") },
                         colors = ButtonDefaults.buttonColors(containerColor = SandboxrColors.PrimaryAccent),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f).height(44.dp)
                     ) {
                         PhosphorIconView(icon = PhosphorIcon.EXPORT, color = Color.White, size = 16.dp)
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("Export Vault", fontSize = 12.sp, color = Color.White)
+                        Text("Exportar cofre", fontSize = 12.sp, color = Color.White)
                     }
 
                     OutlinedButton(
-                        onClick = { onNotice("Import feature: select .senv archive from file picker") },
+                        onClick = { onNotice("Para importar, selecione um arquivo .senv no seletor de arquivos") },
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = SandboxrColors.TextPrimaryDark),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f).height(44.dp)
                     ) {
                         PhosphorIconView(icon = PhosphorIcon.PLUS, color = SandboxrColors.TextPrimaryDark, size = 16.dp)
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("Import .senv", fontSize = 12.sp)
+                        Text("Importar .senv", fontSize = 12.sp)
                     }
                 }
             }
@@ -145,7 +145,7 @@ fun VaultTab(
 
         // Environments Available for Export
         Text(
-            text = "CONTAINERS AVAILABLE FOR BACKUP",
+            text = "AMBIENTES DISPONÍVEIS PARA BACKUP",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.TextSecondaryDark
         )
@@ -163,7 +163,7 @@ fun VaultTab(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "No virtual containers created yet. Create a sandbox to enable vault exports.",
+                        text = "Nenhum ambiente virtual foi criado. Crie um ambiente isolado para habilitar as exportações.",
                         fontSize = 12.sp,
                         color = SandboxrColors.TextSecondaryDark
                     )
@@ -206,7 +206,7 @@ fun VaultTab(
                             }
 
                             Button(
-                                onClick = { onNotice("Exporting ${env.displayName}...") },
+                                onClick = { onNotice("Exportando ${env.displayName}...") },
                                 colors = ButtonDefaults.buttonColors(containerColor = SandboxrColors.SurfaceLevel2Dark),
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.height(34.dp)

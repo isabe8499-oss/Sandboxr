@@ -323,7 +323,7 @@ fun HomeScreen(
                                         size = 32.dp
                                     )
                                     Text(
-                                        text = if (page == defaultPage) "Swipe up for all applications" else "Screen ${page + 1} (Empty)",
+                                        text = if (page == defaultPage) "Deslize para cima para ver todos os aplicativos" else "Tela ${page + 1} (vazia)",
                                         fontFamily = SandboxrFontFamilies.Inter,
                                         fontSize = 13.sp,
                                         color = SandboxrTheme.colors.textSecondary.copy(alpha = 0.8f)
@@ -705,7 +705,7 @@ private fun GrapheneAtAGlance(
                     size = 14.dp
                 )
                 Text(
-                    text = "Tap to set as default Home launcher",
+                    text = "Toque para definir como tela inicial padrão",
                     fontFamily = SandboxrFontFamilies.JetBrainsMono,
                     fontSize = 11.sp,
                     color = SandboxrTheme.colors.textPrimary
@@ -758,7 +758,7 @@ private fun SandboxrQuickStatusCards(
                     color = SandboxrTheme.colors.textPrimary
                 )
                 Text(
-                    text = "Isolated Profile",
+                    text = "Perfil isolado",
                     fontFamily = SandboxrFontFamilies.Inter,
                     fontSize = 10.sp,
                     color = SandboxrTheme.colors.textSecondary
@@ -786,14 +786,14 @@ private fun SandboxrQuickStatusCards(
             )
             Column {
                 Text(
-                    text = "Firewall Active",
+                    text = "Firewall ativo",
                     fontFamily = SandboxrFontFamilies.Inter,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = SandboxrTheme.colors.textPrimary
                 )
                 Text(
-                    text = "Local DNS Shield",
+                    text = "Proteção DNS local",
                     fontFamily = SandboxrFontFamilies.Inter,
                     fontSize = 10.sp,
                     color = SandboxrTheme.colors.textSecondary
@@ -933,7 +933,7 @@ private fun GrapheneHotseat(
                             size = 18.dp
                         )
                         Text(
-                            text = "Search apps, web, privacy...",
+                            text = "Pesquisar apps, internet e privacidade...",
                             style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
                             color = SandboxrTheme.colors.textSecondary
                         )
@@ -1068,7 +1068,7 @@ private fun GrapheneAppContextDialog(
                         size = 18.dp
                     )
                     Text(
-                        text = "App info",
+                        text = "Informações do app",
                         fontFamily = SandboxrFontFamilies.Inter,
                         fontSize = 14.sp,
                         color = SandboxrTheme.colors.textPrimary
@@ -1092,7 +1092,7 @@ private fun GrapheneAppContextDialog(
                         size = 18.dp
                     )
                     Text(
-                        text = if (isPinnedOnHome) "Remove from Home screen" else "Add to Home screen",
+                        text = if (isPinnedOnHome) "Remover da tela inicial" else "Adicionar à tela inicial",
                         fontFamily = SandboxrFontFamilies.Inter,
                         fontSize = 14.sp,
                         color = SandboxrTheme.colors.textPrimary
@@ -1117,7 +1117,7 @@ private fun GrapheneAppContextDialog(
                             size = 18.dp
                         )
                         Text(
-                            text = "Clone to Sandbox container",
+                            text = "Clonar para o ambiente isolado",
                             fontFamily = SandboxrFontFamilies.Inter,
                             fontSize = 14.sp,
                             color = SandboxrTheme.colors.textPrimary
@@ -1141,7 +1141,7 @@ private fun GrapheneAppContextDialog(
                             size = 18.dp
                         )
                         Text(
-                            text = "Uninstall from Sandbox",
+                            text = "Desinstalar do ambiente isolado",
                             fontFamily = SandboxrFontFamilies.Inter,
                             fontSize = 14.sp,
                             color = SandboxrTheme.colors.danger

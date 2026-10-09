@@ -79,7 +79,7 @@ fun HomeSettingsDialog(
                 ) {
                     Column {
                         Text(
-                            text = "HOME SETTINGS",
+                            text = "CONFIGURAÇÕES DA TELA INICIAL",
                             fontFamily = SandboxrFontFamilies.JetBrainsMono,
                             fontSize = 13.sp,
                             fontWeight = FontWeight.Bold,
@@ -87,7 +87,7 @@ fun HomeSettingsDialog(
                             color = SandboxrTheme.colors.primaryAccent
                         )
                         Text(
-                            text = "GrapheneOS Launcher Customization",
+                            text = "Personalização do inicializador GrapheneOS",
                             fontFamily = SandboxrFontFamilies.Inter,
                             fontSize = 12.sp,
                             color = SandboxrTheme.colors.textSecondary
@@ -122,7 +122,7 @@ fun HomeSettingsDialog(
                 ) {
                     // SECTION 1: GRID & LAYOUT
                     item {
-                        SettingsSectionHeader("GRID & LAYOUT")
+                        SettingsSectionHeader("GRADE E LAYOUT")
                     }
                     item {
                         GridSizeSelector(
@@ -144,36 +144,36 @@ fun HomeSettingsDialog(
 
                     // SECTION 2: HOME SCREEN
                     item {
-                        SettingsSectionHeader("HOME SCREEN")
+                        SettingsSectionHeader("TELA INICIAL")
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Add app icons to home screen",
-                            subtitle = "For newly installed applications",
+                            title = "Adicionar ícones de apps à tela inicial",
+                            subtitle = "Para novos aplicativos instalados",
                             checked = settings.autoAddNewAppsToHome,
                             onCheckedChange = { settings = settings.copy(autoAddNewAppsToHome = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Show At-a-Glance widget",
-                            subtitle = "Clock and date header linking to Clock & Calendar",
+                            title = "Mostrar widget de resumo",
+                            subtitle = "Cabeçalho com relógio e data, com atalhos para Relógio e Calendário",
                             checked = settings.showAtAGlance,
                             onCheckedChange = { settings = settings.copy(showAtAGlance = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Show app labels on home screen",
-                            subtitle = "Text names below desktop icons",
+                            title = "Mostrar nomes dos apps na tela inicial",
+                            subtitle = "Nomes abaixo dos ícones da tela inicial",
                             checked = settings.showHomeLabels,
                             onCheckedChange = { settings = settings.copy(showHomeLabels = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Allow home screen rotation",
-                            subtitle = "Rotate home screen into landscape mode",
+                            title = "Permitir rotação da tela inicial",
+                            subtitle = "Girar a tela inicial para o modo paisagem",
                             checked = settings.allowScreenRotation,
                             onCheckedChange = { settings = settings.copy(allowScreenRotation = it) }
                         )
@@ -187,20 +187,20 @@ fun HomeSettingsDialog(
 
                     // SECTION 3: APP DRAWER
                     item {
-                        SettingsSectionHeader("APP DRAWER")
+                        SettingsSectionHeader("GAVETA DE APLICATIVOS")
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Show search bar in drawer",
-                            subtitle = "Quick app and web search query bar",
+                            title = "Mostrar barra de pesquisa na gaveta",
+                            subtitle = "Barra para pesquisar apps e na internet",
                             checked = settings.showDrawerSearchBar,
                             onCheckedChange = { settings = settings.copy(showDrawerSearchBar = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Show app labels in drawer",
-                            subtitle = "Text names below drawer icons",
+                            title = "Mostrar nomes dos apps na gaveta",
+                            subtitle = "Nomes abaixo dos ícones da gaveta",
                             checked = settings.showDrawerLabels,
                             onCheckedChange = { settings = settings.copy(showDrawerLabels = it) }
                         )
@@ -214,7 +214,7 @@ fun HomeSettingsDialog(
 
                     // SECTION 4: THEMING & ICONS
                     item {
-                        SettingsSectionHeader("THEME & STYLE")
+                        SettingsSectionHeader("TEMA E ESTILO")
                     }
                     item {
                         ThemeModeSelector(
@@ -224,8 +224,8 @@ fun HomeSettingsDialog(
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Themed icons",
-                            subtitle = "Monochrome icons matching device system accent",
+                            title = "Ícones temáticos",
+                            subtitle = "Ícones monocromáticos que combinam com a cor do sistema",
                             checked = settings.themedIcons,
                             onCheckedChange = { settings = settings.copy(themedIcons = it) }
                         )
@@ -239,28 +239,28 @@ fun HomeSettingsDialog(
 
                     // SECTION 5: GESTURES
                     item {
-                        SettingsSectionHeader("GESTURES")
+                        SettingsSectionHeader("GESTOS")
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Swipe down for notifications",
-                            subtitle = "Expand status bar notification shade on swipe down",
+                            title = "Deslizar para baixo para ver notificações",
+                            subtitle = "Abrir o painel de notificações ao deslizar para baixo",
                             checked = settings.swipeDownForNotifications,
                             onCheckedChange = { settings = settings.copy(swipeDownForNotifications = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Double-tap to sleep",
-                            subtitle = "Turn off or lock screen by tapping empty workspace",
+                            title = "Toque duplo para bloquear",
+                            subtitle = "Bloquear a tela tocando duas vezes em uma área vazia",
                             checked = settings.doubleTapToLock,
                             onCheckedChange = { settings = settings.copy(doubleTapToLock = it) }
                         )
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Swipe up for all apps",
-                            subtitle = "Slide up drawer from bottom of screen",
+                            title = "Deslizar para cima para ver todos os apps",
+                            subtitle = "Abrir a gaveta deslizando de baixo para cima",
                             checked = settings.swipeUpForDrawer,
                             onCheckedChange = { settings = settings.copy(swipeUpForDrawer = it) }
                         )
@@ -268,12 +268,12 @@ fun HomeSettingsDialog(
 
                     // SECTION 6: SECURITY & PRIVACY
                     item {
-                        SettingsSectionHeader("SECURITY & PRIVACY")
+                        SettingsSectionHeader("SEGURANÇA E PRIVACIDADE")
                     }
                     item {
                         SettingsToggleRow(
-                            title = "Show sandbox indicators",
-                            subtitle = "Visual isolation badge on sandboxed applications",
+                            title = "Mostrar indicadores de isolamento",
+                            subtitle = "Selo visual nos aplicativos isolados",
                             checked = settings.showSandboxIndicators,
                             onCheckedChange = { settings = settings.copy(showSandboxIndicators = it) }
                         )
@@ -281,7 +281,7 @@ fun HomeSettingsDialog(
 
                     // SECTION 7: HELP & ONBOARDING
                     item {
-                        SettingsSectionHeader("HELP & ONBOARDING")
+                        SettingsSectionHeader("AJUDA E INTRODUÇÃO")
                     }
                     item {
                         Row(
@@ -300,14 +300,14 @@ fun HomeSettingsDialog(
                         ) {
                             Column(modifier = Modifier.weight(1f)) {
                                 Text(
-                                    text = "Virtual Profiles Setup Guide",
+                                    text = "Guia de configuração dos perfis virtuais",
                                     fontFamily = SandboxrFontFamilies.Inter,
                                     fontSize = 13.sp,
                                     fontWeight = FontWeight.Medium,
                                     color = SandboxrTheme.colors.textPrimary
                                 )
                                 Text(
-                                    text = "Revisit the 6-step architecture & navigation tour",
+                                    text = "Rever o guia de arquitetura e navegação em 6 etapas",
                                     fontFamily = SandboxrFontFamilies.Inter,
                                     fontSize = 11.sp,
                                     color = SandboxrTheme.colors.textSecondary
@@ -336,7 +336,7 @@ fun HomeSettingsDialog(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "Save & Apply Settings",
+                        text = "Salvar e aplicar configurações",
                         fontFamily = SandboxrFontFamilies.Inter,
                         fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold,
@@ -428,7 +428,7 @@ private fun GridSizeSelector(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            text = "App Grid Size",
+            text = "Tamanho da grade de apps",
             fontFamily = SandboxrFontFamilies.Inter,
             fontSize = 13.sp,
             fontWeight = FontWeight.Medium,
@@ -479,7 +479,7 @@ private fun HotseatCountSelector(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "Dock Icon Count",
+            text = "Quantidade de ícones no dock",
             fontFamily = SandboxrFontFamilies.Inter,
             fontSize = 13.sp,
             fontWeight = FontWeight.Medium,
@@ -523,7 +523,7 @@ private fun ThemeModeSelector(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            text = "Theme Mode",
+            text = "Modo do tema",
             fontFamily = SandboxrFontFamilies.Inter,
             fontSize = 13.sp,
             fontWeight = FontWeight.Medium,
@@ -547,8 +547,8 @@ private fun ThemeModeSelector(
                     Text(
                         text = when (mode) {
                             LauncherThemeMode.SYSTEM -> "System"
-                            LauncherThemeMode.DARK -> "Dark"
-                            LauncherThemeMode.LIGHT -> "Light"
+                            LauncherThemeMode.DARK -> "Escuro"
+                            LauncherThemeMode.LIGHT -> "Claro"
                         },
                         fontFamily = SandboxrFontFamilies.Inter,
                         fontSize = 11.sp,
@@ -566,7 +566,7 @@ private fun IconShapeSelector(
     selectedShape: String,
     onSelect: (String) -> Unit
 ) {
-    val shapes = listOf("Squircle", "Circle", "Rounded Square")
+    val shapes = listOf("Squircle", "Circle", "Quadrado arredondado")
 
     Column(
         modifier = Modifier
@@ -577,7 +577,7 @@ private fun IconShapeSelector(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            text = "Icon Shape",
+            text = "Formato dos ícones",
             fontFamily = SandboxrFontFamilies.Inter,
             fontSize = 13.sp,
             fontWeight = FontWeight.Medium,
@@ -625,7 +625,7 @@ private fun SearchEngineSelector(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            text = "Drawer Search Provider",
+            text = "Provedor de pesquisa da gaveta",
             fontFamily = SandboxrFontFamilies.Inter,
             fontSize = 13.sp,
             fontWeight = FontWeight.Medium,
@@ -677,7 +677,7 @@ private fun WallpaperDimmingSlider(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Wallpaper Dimming",
+                text = "Escurecimento do papel de parede",
                 fontFamily = SandboxrFontFamilies.Inter,
                 fontSize = 13.sp,
                 fontWeight = FontWeight.Medium,

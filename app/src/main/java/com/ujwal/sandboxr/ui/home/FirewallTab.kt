@@ -70,18 +70,18 @@ fun FirewallTab(
     ) {
         // Section Header
         Text(
-            text = "LOCAL DNS FIREWALL",
+            text = "FIREWALL DNS LOCAL",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.PrimaryAccent
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = "Network & Routing Control",
+            text = "Controle de rede e roteamento",
             style = SandboxrTheme.typography.title,
             color = SandboxrColors.TextPrimaryDark
         )
         Text(
-            text = "Per-environment socket isolation and local RethinkDNS firestack ad-blocking.",
+            text = "Isolamento de conexões por ambiente e bloqueio de anúncios com RethinkDNS local.",
             style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
             color = SandboxrColors.TextSecondaryDark,
             modifier = Modifier.padding(top = 2.dp, bottom = 14.dp)
@@ -127,12 +127,12 @@ fun FirewallTab(
                         Spacer(modifier = Modifier.width(10.dp))
                         Column {
                             Text(
-                                text = "Headless Firestack Engine",
+                                text = "Mecanismo Firestack em segundo plano",
                                 style = SandboxrTheme.typography.body.copy(fontWeight = FontWeight.SemiBold),
                                 color = SandboxrColors.TextPrimaryDark
                             )
                             Text(
-                                text = "Steven Black In-RAM Blocklist (~184,000 domains)",
+                                text = "Lista de bloqueio Steven Black na memória (~184.000 domínios)",
                                 style = SandboxrTheme.typography.label.copy(fontSize = 11.sp),
                                 color = SandboxrColors.TextSecondaryDark
                             )
@@ -168,7 +168,7 @@ fun FirewallTab(
                             color = SandboxrColors.TextSecondaryDark
                         )
                         Text(
-                            text = if (adBlockGlobal) "ACTIVE" else "BYPASS",
+                            text = if (adBlockGlobal) "ATIVO" else "IGNORAR",
                             fontFamily = SandboxrFontFamilies.JetBrainsMono,
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
@@ -177,12 +177,12 @@ fun FirewallTab(
                     }
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(
-                            text = "QUERIES",
+                            text = "CONSULTAS",
                             fontSize = 10.sp,
                             color = SandboxrColors.TextSecondaryDark
                         )
                         Text(
-                            text = "0 ms avg",
+                            text = "média de 0 ms",
                             fontFamily = SandboxrFontFamilies.JetBrainsMono,
                             fontSize = 12.sp,
                             color = SandboxrColors.TextMonospaceDark
@@ -209,7 +209,7 @@ fun FirewallTab(
 
         // Card 2: Per-Environment Routing Matrix
         Text(
-            text = "CONTAINER ROUTING MATRIX",
+            text = "MATRIZ DE ROTEAMENTO DOS AMBIENTES",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.TextSecondaryDark
         )
@@ -244,7 +244,7 @@ fun FirewallTab(
                                     color = SandboxrColors.TextPrimaryDark
                                 )
                                 Text(
-                                    text = if (env.isSystem) "Unrouted host system" else "Userspace container",
+                                    text = if (env.isSystem) "Sistema anfitrião sem roteamento" else "Ambiente isolado em espaço de usuário",
                                     fontSize = 11.sp,
                                     color = SandboxrColors.TextSecondaryDark
                                 )
@@ -282,7 +282,7 @@ fun FirewallTab(
                             }
                         } else {
                             Text(
-                                text = "DIRECT",
+                                text = "DIRETO",
                                 fontFamily = SandboxrFontFamilies.JetBrainsMono,
                                 fontSize = 11.sp,
                                 color = SandboxrColors.Success

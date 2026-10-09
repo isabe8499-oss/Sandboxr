@@ -60,18 +60,18 @@ fun SettingsTab(
     ) {
         // Section Header
         Text(
-            text = "PLATFORM CONFIGURATION",
+            text = "CONFIGURAÇÃO DA PLATAFORMA",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.PrimaryAccent
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = "Sandboxr Settings",
+            text = "Configurações do Sandboxr",
             style = SandboxrTheme.typography.title,
             color = SandboxrColors.TextPrimaryDark
         )
         Text(
-            text = "Kernel evasion, clipboard sandboxing, and system launcher preferences.",
+            text = "Configurações de privacidade, isolamento da área de transferência e tela inicial.",
             style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
             color = SandboxrColors.TextSecondaryDark,
             modifier = Modifier.padding(top = 2.dp, bottom = 16.dp)
@@ -101,12 +101,12 @@ fun SettingsTab(
                     Spacer(modifier = Modifier.width(12.dp))
                     Column {
                         Text(
-                            text = "Default System Launcher",
+                            text = "Tela inicial padrão do sistema",
                             style = SandboxrTheme.typography.body.copy(fontWeight = FontWeight.SemiBold),
                             color = SandboxrColors.TextPrimaryDark
                         )
                         Text(
-                            text = "Set Sandboxr as your primary Android home screen",
+                            text = "Defina o Sandboxr como tela inicial principal do Android",
                             fontSize = 12.sp,
                             color = SandboxrColors.TextSecondaryDark
                         )
@@ -125,7 +125,7 @@ fun SettingsTab(
                                 val intent = Intent(Settings.ACTION_SETTINGS)
                                 context.startActivity(intent)
                             } catch (e: Exception) {
-                                onNotice("Could not open Home Settings: ${e.message}")
+                                onNotice("Não foi possível abrir as configurações da tela inicial: ${e.message}")
                             }
                         }
                     },
@@ -133,7 +133,7 @@ fun SettingsTab(
                     shape = RoundedCornerShape(12.dp),
                     modifier = Modifier.fillMaxWidth().height(42.dp)
                 ) {
-                    Text("Configure Default Home App", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
+                    Text("Configurar app de tela inicial padrão", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
                 }
             }
         }
@@ -142,7 +142,7 @@ fun SettingsTab(
 
         // 2. Engine & Isolation Telemetry
         Text(
-            text = "SYSTEM ENGINE TELEMETRY",
+            text = "INFORMAÇÕES DO MECANISMO DO SISTEMA",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.TextSecondaryDark
         )
@@ -150,30 +150,30 @@ fun SettingsTab(
 
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SettingTelemetryRow(
-                title = "16KB Page Alignment",
-                subtitle = "Android 15+ ELF LOAD segment alignment",
-                badgeText = "VERIFIED (16384 B)",
+                title = "Alinhamento de páginas de 16 KB",
+                subtitle = "Alinhamento de segmentos ELF no Android 15 ou superior",
+                badgeText = "VERIFICADO (16384 B)",
                 badgeColor = SandboxrColors.Success
             )
 
             SettingTelemetryRow(
-                title = "Native Hooking Engine",
+                title = "Mecanismo nativo de interceptação",
                 subtitle = "ShadowHook (PLT/Inline) + ByteHook (libc/fs)",
                 badgeText = "ACTIVE",
                 badgeColor = SandboxrColors.Success
             )
 
             SettingTelemetryRow(
-                title = "Hidden API Bypass",
-                subtitle = "AndroidHiddenApiBypass Unsafe memory unreflection",
-                badgeText = "ACTIVE (API 29–37)",
+                title = "Contorno de APIs ocultas",
+                subtitle = "AndroidHiddenApiBypass: acesso a APIs internas",
+                badgeText = "ATIVO (API 29–37)",
                 badgeColor = SandboxrColors.Success
             )
 
             SettingTelemetryRow(
-                title = "GMS Sandbox Interceptor",
-                subtitle = "Google Play Services dynamic stub code dispatch",
-                badgeText = "SERVICE_MISSING (Code 1)",
+                title = "Interceptador do ambiente isolado do GMS",
+                subtitle = "Encaminhamento dinâmico de chamadas do Google Play Services",
+                badgeText = "SERVIÇO AUSENTE (código 1)",
                 badgeColor = SandboxrColors.PrimaryAccent
             )
         }
@@ -182,7 +182,7 @@ fun SettingsTab(
 
         // 3. About & License
         Text(
-            text = "ABOUT SANDBOXR",
+            text = "SOBRE O SANDBOXR",
             style = SandboxrTheme.typography.label.copy(letterSpacing = 1.2.sp),
             color = SandboxrColors.TextSecondaryDark
         )
@@ -223,12 +223,12 @@ fun SettingsTab(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "License",
+                        text = "Licença",
                         fontSize = 13.sp,
                         color = SandboxrColors.TextSecondaryDark
                     )
                     Text(
-                        text = "GNU General Public License v3.0",
+                        text = "Licença Pública Geral GNU v3.0",
                         fontFamily = SandboxrFontFamilies.JetBrainsMono,
                         fontSize = 12.sp,
                         color = SandboxrColors.PrimaryAccent
@@ -243,12 +243,12 @@ fun SettingsTab(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Privacy Guarantee",
+                        text = "Garantia de privacidade",
                         fontSize = 13.sp,
                         color = SandboxrColors.TextSecondaryDark
                     )
                     Text(
-                        text = "Zero Telemetry / Zero Root",
+                        text = "Sem telemetria / sem root",
                         fontFamily = SandboxrFontFamilies.JetBrainsMono,
                         fontSize = 12.sp,
                         color = SandboxrColors.Success

@@ -81,153 +81,153 @@ fun GrapheneOnboardingScreen(
     val steps = listOf(
         OnboardingStep(
             stepIndex = 1,
-            badge = "STEP 1 OF 6 // GETTING STARTED",
-            title = "Welcome to SANDBOXR",
-            subtitle = "A clean, fast, and completely private home screen designed to give you total control over your phone.",
+            badge = "ETAPA 1 DE 6 // INTRODUÇÃO",
+            title = "Boas-vindas ao SANDBOXR",
+            subtitle = "Uma tela inicial limpa, rápida e privada, criada para dar a você controle total do celular.",
             icon = PhosphorIcon.SHIELD,
             highlights = listOf(
                 StepHighlight(
-                    title = "Completely Private",
-                    description = "No tracking, no analytics, and no ads. Everything you do stays strictly on your phone.",
+                    title = "Privacidade total",
+                    description = "Sem rastreamento, análise de uso ou anúncios. Tudo o que você faz permanece no seu celular.",
                     icon = PhosphorIcon.LOCK
                 ),
                 StepHighlight(
-                    title = "Fast and Battery Friendly",
-                    description = "Engineered to run smoothly without draining your battery or slowing down your device.",
+                    title = "Rápido e econômico",
+                    description = "Projetado para funcionar com fluidez sem consumir demais a bateria nem deixar o aparelho lento.",
                     icon = PhosphorIcon.CPU
                 ),
                 StepHighlight(
-                    title = "Clean and Distraction-Free",
-                    description = "A simple, elegant design modeled after GrapheneOS for a calm, organized experience.",
+                    title = "Limpo e sem distrações",
+                    description = "Um design simples e elegante inspirado no GrapheneOS, para uma experiência tranquila e organizada.",
                     icon = PhosphorIcon.GRID
                 )
             ),
-            helpfulTip = "You can customize your wallpaper, grid layout, and icon shapes anytime in Home Settings."
+            helpfulTip = "Personalize o papel de parede, a grade e o formato dos ícones nas configurações da tela inicial."
         ),
         OnboardingStep(
             stepIndex = 2,
-            badge = "STEP 2 OF 6 // SEPARATE SPACES",
-            title = "Separate Spaces for Your Apps",
-            subtitle = "Keep your personal life, work apps, and private tools in their own dedicated spaces.",
+            badge = "ETAPA 2 DE 6 // ESPAÇOS SEPARADOS",
+            title = "Espaços separados para seus apps",
+            subtitle = "Mantenha sua vida pessoal, os apps de trabalho e as ferramentas privadas em espaços separados.",
             icon = PhosphorIcon.BOX,
             highlights = listOf(
                 StepHighlight(
-                    title = "Two Copies of Any App",
-                    description = "Log into two different accounts on WhatsApp, Telegram, or social media simultaneously.",
+                    title = "Duas cópias de qualquer app",
+                    description = "Entre em duas contas diferentes do WhatsApp, Telegram ou redes sociais ao mesmo tempo.",
                     icon = PhosphorIcon.PLUS
                 ),
                 StepHighlight(
-                    title = "Separated Photos and Files",
-                    description = "Files, photos, and messages in one space are completely hidden from other spaces.",
+                    title = "Fotos e arquivos separados",
+                    description = "Arquivos, fotos e mensagens de um espaço ficam ocultos dos demais espaços.",
                     icon = PhosphorIcon.DATABASE
                 ),
                 StepHighlight(
-                    title = "No Technical Setup",
-                    description = "Create a new space in seconds with a custom name and color. Everything works right away.",
+                    title = "Sem configuração técnica",
+                    description = "Crie um espaço em segundos, com nome e cor personalizados. Tudo fica pronto para usar.",
                     icon = PhosphorIcon.SHIELD
                 )
             ),
-            helpfulTip = "Tap '+ New Profile' in your app drawer anytime to create a fresh space."
+            helpfulTip = "Toque em '+ Novo perfil' na gaveta de apps para criar um novo espaço."
         ),
         OnboardingStep(
             stepIndex = 3,
-            badge = "STEP 3 OF 6 // EASY NAVIGATION",
-            title = "Move Easily Between Spaces",
-            subtitle = "Switch between your profiles with a single tap, right from your app drawer or home screen.",
+            badge = "ETAPA 3 DE 6 // NAVEGAÇÃO SIMPLES",
+            title = "Alterne facilmente entre espaços",
+            subtitle = "Alterne entre perfis com um toque, diretamente da gaveta de apps ou da tela inicial.",
             icon = PhosphorIcon.GRID,
             highlights = listOf(
                 StepHighlight(
-                    title = "Tabs at the Top of Your Drawer",
-                    description = "Swipe up to see all your apps, then tap tabs like 'Personal', 'Work', or your custom spaces.",
+                    title = "Abas no topo da gaveta",
+                    description = "Deslize para cima para ver os apps e toque em abas como 'Pessoal', 'Trabalho' ou nos espaços personalizados.",
                     icon = PhosphorIcon.USER
                 ),
                 StepHighlight(
-                    title = "One-Tap Switcher Pill",
-                    description = "The top bar shows which space is currently active. Tap it anytime to switch or add spaces.",
+                    title = "Seletor com um toque",
+                    description = "A barra superior mostra o espaço ativo. Toque nela para alternar ou adicionar espaços.",
                     icon = PhosphorIcon.CARET_DOWN
                 ),
                 StepHighlight(
-                    title = "Long-Press for Quick Actions",
-                    description = "Press and hold any app icon to quickly copy it to another space or pin it to your home screen.",
+                    title = "Mantenha pressionado para ver ações",
+                    description = "Mantenha um ícone pressionado para copiá-lo para outro espaço ou fixá-lo na tela inicial.",
                     icon = PhosphorIcon.SPARKLE
                 )
             ),
-            helpfulTip = "Swipe up anywhere on your home screen to open the app drawer and see your profile tabs."
+            helpfulTip = "Deslize para cima na tela inicial para abrir a gaveta de apps e ver as abas dos perfis."
         ),
         OnboardingStep(
             stepIndex = 4,
-            badge = "STEP 4 OF 6 // PRIVACY SHIELD",
-            title = "Stop Apps from Tracking You",
-            subtitle = "SANDBOXR automatically shields your device identifiers so companies cannot link your profiles together.",
+            badge = "ETAPA 4 DE 6 // PROTEÇÃO DE PRIVACIDADE",
+            title = "Impeça o rastreamento pelos apps",
+            subtitle = "O SANDBOXR protege automaticamente os identificadores do dispositivo para dificultar a associação entre seus perfis.",
             icon = PhosphorIcon.LOCK,
             highlights = listOf(
                 StepHighlight(
-                    title = "Unique Identity per Space",
-                    description = "Each profile appears as a completely different device to apps, keeping your accounts separate.",
+                    title = "Identidade própria por espaço",
+                    description = "Cada perfil se apresenta aos apps como um dispositivo diferente, mantendo suas contas separadas.",
                     icon = PhosphorIcon.LOCK
                 ),
                 StepHighlight(
-                    title = "Blocks Ad Tracking",
-                    description = "Prevents advertising networks and social apps from recognizing your physical phone.",
+                    title = "Bloqueia rastreamento de anúncios",
+                    description = "Ajuda a impedir que redes de anúncios e apps sociais reconheçam seu celular físico.",
                     icon = PhosphorIcon.SHIELD
                 ),
                 StepHighlight(
-                    title = "Works Automatically",
-                    description = "Protection is active by default. You don't have to configure any complicated settings.",
+                    title = "Funciona automaticamente",
+                    description = "A proteção fica ativa por padrão. Não é necessário configurar opções complicadas.",
                     icon = PhosphorIcon.CHECK
                 )
             ),
-            helpfulTip = "Apps inside private spaces can never see your real device serial number."
+            helpfulTip = "Os apps em espaços privados não conseguem ver o número de série real do dispositivo."
         ),
         OnboardingStep(
             stepIndex = 5,
-            badge = "STEP 5 OF 6 // INTERNET CONTROL",
-            title = "Control How Apps Connect",
-            subtitle = "Decide whether a space connects normally, uses a secure VPN or proxy, or stays completely offline.",
+            badge = "ETAPA 5 DE 6 // CONTROLE DA INTERNET",
+            title = "Controle como os apps se conectam",
+            subtitle = "Escolha se um espaço se conecta normalmente, usa VPN ou proxy, ou fica totalmente sem internet.",
             icon = PhosphorIcon.GLOBE,
             highlights = listOf(
                 StepHighlight(
-                    title = "VPN & Proxy Options",
-                    description = "Direct your work apps through a secure VPN while personal apps use normal WiFi or mobile data.",
+                    title = "Opções de VPN e proxy",
+                    description = "Encaminhe os apps de trabalho por uma VPN segura enquanto os pessoais usam Wi-Fi ou dados móveis.",
                     icon = PhosphorIcon.GLOBE
                 ),
                 StepHighlight(
-                    title = "Completely Offline Mode",
-                    description = "Turn off internet access for sensitive apps so they can never send your data anywhere.",
+                    title = "Modo totalmente offline",
+                    description = "Desative a internet para apps sensíveis, impedindo que enviem dados pela rede.",
                     icon = PhosphorIcon.LOCK
                 ),
                 StepHighlight(
-                    title = "Private Web Lookups",
-                    description = "Protects the websites your phone connects to from being monitored by your internet provider.",
+                    title = "Consultas privadas na internet",
+                    description = "Ajuda a proteger os sites acessados contra monitoramento pelo provedor de internet.",
                     icon = PhosphorIcon.SHIELD
                 )
             ),
-            helpfulTip = "You can change the internet mode of any profile anytime from the profile settings."
+            helpfulTip = "Altere o modo de internet de qualquer perfil nas configurações do perfil."
         ),
         OnboardingStep(
             stepIndex = 6,
-            badge = "STEP 6 OF 6 // READY TO GO",
-            title = "Make SANDBOXR Your Home",
-            subtitle = "Set SANDBOXR as your default launcher to enjoy smooth gestures and full privacy every time you use your phone.",
+            badge = "ETAPA 6 DE 6 // TUDO PRONTO",
+            title = "Use o SANDBOXR como tela inicial",
+            subtitle = "Defina o SANDBOXR como inicializador padrão para usar gestos fluidos e recursos de privacidade na tela inicial.",
             icon = PhosphorIcon.HOME,
             highlights = listOf(
                 StepHighlight(
-                    title = "Smooth Daily Gestures",
-                    description = "Swipe up for all apps, swipe down for notifications, and double-tap empty space to sleep.",
+                    title = "Gestos simples no dia a dia",
+                    description = "Deslize para cima para ver os apps, para baixo para ver notificações e toque duas vezes em uma área vazia para bloquear.",
                     icon = PhosphorIcon.ARROW_UP
                 ),
                 StepHighlight(
-                    title = "Helpful Clock and Date",
-                    description = "Tap the time to open your alarm clock, or tap the date to jump straight to your calendar.",
+                    title = "Relógio e data úteis",
+                    description = "Toque no horário para abrir o relógio ou na data para abrir o calendário.",
                     icon = PhosphorIcon.CLOUD_SUN
                 ),
                 StepHighlight(
-                    title = "Revisit Anytime",
-                    description = "You can re-open this guide whenever you like by pressing and holding the home screen wallpaper.",
+                    title = "Consulte novamente quando quiser",
+                    description = "Reabra este guia quando quiser mantendo o papel de parede da tela inicial pressionado.",
                     icon = PhosphorIcon.GEAR
                 )
             ),
-            helpfulTip = "Tap 'Set as Default Home Launcher' below, then tap 'Get Started' to begin!"
+            helpfulTip = "Toque em 'Definir como tela inicial padrão' abaixo e depois em 'Começar'!"
         )
     )
 
@@ -299,7 +299,7 @@ fun GrapheneOnboardingScreen(
                             .padding(horizontal = 12.dp, vertical = 6.dp)
                     ) {
                         Text(
-                            text = "SKIP",
+                            text = "PULAR",
                             fontFamily = SandboxrFontFamilies.JetBrainsMono,
                             fontSize = 11.sp,
                             fontWeight = FontWeight.SemiBold,
@@ -350,7 +350,7 @@ fun GrapheneOnboardingScreen(
                                 .padding(horizontal = 16.dp, vertical = 12.dp)
                         ) {
                             Text(
-                                text = "BACK",
+                                text = "VOLTAR",
                                 fontFamily = SandboxrFontFamilies.JetBrainsMono,
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold,
@@ -405,7 +405,7 @@ fun GrapheneOnboardingScreen(
                             .padding(horizontal = 20.dp, vertical = 12.dp)
                     ) {
                         Text(
-                            text = if (isLastPage) "GET STARTED" else "NEXT",
+                            text = if (isLastPage) "COMEÇAR" else "PRÓXIMO",
                             fontFamily = SandboxrFontFamilies.JetBrainsMono,
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
@@ -614,14 +614,14 @@ private fun OnboardingStepCard(
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = if (isDefaultLauncher) "SANDBOXR is your default launcher" else "Set as Default Home Launcher",
+                            text = if (isDefaultLauncher) "O SANDBOXR é seu inicializador padrão" else "Definir como tela inicial padrão",
                             fontFamily = SandboxrFontFamilies.Inter,
                             fontSize = 13.sp,
                             fontWeight = FontWeight.Bold,
                             color = if (isDefaultLauncher) SandboxrTheme.colors.textPrimary else SandboxrTheme.colors.primaryAccent
                         )
                         Text(
-                            text = if (isDefaultLauncher) "All system gestures and home buttons are routed to SANDBOXR." else "Tap here to make SANDBOXR your main home screen.",
+                            text = if (isDefaultLauncher) "Todos os gestos do sistema e o botão Início serão direcionados ao SANDBOXR." else "Toque aqui para definir o SANDBOXR como tela inicial principal.",
                             fontFamily = SandboxrFontFamilies.Inter,
                             fontSize = 11.sp,
                             color = SandboxrTheme.colors.textSecondary

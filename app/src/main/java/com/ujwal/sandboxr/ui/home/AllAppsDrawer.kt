@@ -206,7 +206,7 @@ fun AllAppsDrawer(
                             onValueChange = onSearchQueryChange,
                             placeholder = {
                                 Text(
-                                    text = "Search apps & more...",
+                                    text = "Pesquisar apps e mais...",
                                     style = SandboxrTheme.typography.body.copy(fontSize = 13.sp),
                                     color = SandboxrTheme.colors.textSecondary
                                 )
@@ -328,12 +328,12 @@ fun AllAppsDrawer(
                         ) {
                             if (searchQuery.isNotEmpty()) {
                                 Text(
-                                    text = "No apps matching \"$searchQuery\"",
+                                    text = "Nenhum app corresponde a \"$searchQuery\"",
                                     style = SandboxrTheme.typography.title,
                                     color = SandboxrTheme.colors.textPrimary
                                 )
                                 Text(
-                                    text = "Try a different search term or search the web",
+                                    text = "Tente outro termo ou pesquise na internet",
                                     style = SandboxrTheme.typography.body,
                                     color = SandboxrTheme.colors.textSecondary
                                 )
@@ -352,13 +352,13 @@ fun AllAppsDrawer(
                                     )
                                 }
                                 Text(
-                                    text = "No apps in this sandbox",
+                                    text = "Nenhum app neste ambiente isolado",
                                     style = SandboxrTheme.typography.title,
                                     color = SandboxrTheme.colors.textPrimary,
                                     fontWeight = FontWeight.SemiBold
                                 )
                                 Text(
-                                    text = "Clone apps from your personal profile or install APKs to run isolated in this profile.",
+                                    text = "Clone apps do seu perfil pessoal ou instale APKs para executá-los isoladamente neste perfil.",
                                     style = SandboxrTheme.typography.body,
                                     color = SandboxrTheme.colors.textSecondary,
                                     textAlign = TextAlign.Center
@@ -381,7 +381,7 @@ fun AllAppsDrawer(
                                             size = 16.dp
                                         )
                                         Text(
-                                            text = "Clone App to Sandbox",
+                                            text = "Clonar app para o ambiente isolado",
                                             fontWeight = FontWeight.SemiBold,
                                             color = Color.White
                                         )
@@ -389,7 +389,7 @@ fun AllAppsDrawer(
                                 }
                             } else {
                                 Text(
-                                    text = "No applications found",
+                                    text = "Nenhum aplicativo encontrado",
                                     style = SandboxrTheme.typography.body,
                                     color = SandboxrTheme.colors.textSecondary
                                 )
@@ -601,7 +601,7 @@ fun GrapheneProfileTabBar(
             val isPersonal = (env.isSystem || env.id == EnvironmentEntity.SYSTEM_ENV_ID) && !isWork
             val title = when {
                 isWork -> "Work"
-                isPersonal -> "Personal"
+                isPersonal -> "Pessoal"
                 else -> env.displayName
             }
             val color = when {
@@ -642,7 +642,7 @@ fun GrapheneProfileTabBar(
                     size = 14.dp
                 )
                 Text(
-                    text = "New Profile",
+                    text = "Novo perfil",
                     fontFamily = SandboxrFontFamilies.Inter,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Medium,
