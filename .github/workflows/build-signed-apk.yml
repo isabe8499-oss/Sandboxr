@@ -27,7 +27,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
         with:
-          packages: "platforms;android-36 build-tools;36.0.0"
+          packages: "platforms;android-35 platforms;android-36 build-tools;36.0.0"
 
       - name: Install required Android NDK (retry transient download failures)
         shell: bash
@@ -67,9 +67,11 @@ jobs:
       - name: Smoke-test app startup on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 36
+          api-level: 35
           arch: x86_64
-          profile: pixel_6
+          profile: pixel_2
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          boot-timeout: 900
           disable-animations: true
           script: |
             adb wait-for-device
