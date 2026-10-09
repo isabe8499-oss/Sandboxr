@@ -67,10 +67,11 @@ jobs:
       - name: Smoke-test app startup on Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
+          api-level: 34
           arch: x86_64
           profile: pixel_2
-          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          force-avd-creation: true
+          emulator-options: -no-snapshot-save -no-snapshot-load -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
           boot-timeout: 900
           disable-animations: true
           script: |
@@ -100,7 +101,9 @@ jobs:
           if-no-files-found: ignore
 
       - name: Upload signed APK
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Sandboxr-pt-BR-signed
           path: Sandboxr-pt-BR-release.apk
+          if-no-files-found: error
