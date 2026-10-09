@@ -52,7 +52,7 @@ jobs:
 
       - name: Generate temporary signing key
         run: |
-          keytool -genkeypair -v             -keystore sandboxr-release.jks             -storepass sandboxr-build             -keypass sandboxr-build             -alias sandboxr             -keyalg RSA -keysize 2048 -validity 3650             -dname "CN=Sandboxr Build, O=Sandboxr, C=BR"
+          keytool -genkeypair -v -keystore sandboxr-release.jks -storepass sandboxr-build -keypass sandboxr-build -alias sandboxr -keyalg RSA -keysize 2048 -validity 3650 -dname "CN=Sandboxr Build, O=Sandboxr, C=BR"
 
       - name: Sign APK
         shell: bash
@@ -81,7 +81,7 @@ jobs:
             adb logcat -d -b all -v threadtime > startup-logcat.txt
             adb shell dumpsys activity activities > startup-activities.txt
             adb shell pidof com.ujwal.sandboxr > startup-pid.txt || true
-            python3 -c "import pathlib,re,sys; s=pathlib.Path('startup-logcat.txt').read_text(errors='ignore'); bad=re.search(r'FATAL EXCEPTION|Fatal signal|Process: com\\.ujwal\\.sandboxr',s); print('Crash signature detected' if bad else 'No crash signature found'); sys.exit(1 if bad else 0)"
+            python3 -c "import pathlib,re,sys; s=pathlib.Path('startup-logcat.txt').read_text(errors='ignore'); bad=re.search(r'FATAL EXCEPTION.*?Process: com\\.ujwal\\.sandboxr|Fatal signal.*\\(sandboxr\\)',s,re.S); print('Sandboxr crash signature detected' if bad else 'No Sandboxr crash signature found'); sys.exit(1 if bad else 0)"
             python3 -c "import pathlib,sys; s=pathlib.Path('startup-activities.txt').read_text(errors='ignore'); ok='com.ujwal.sandboxr' in s; print('App activity found' if ok else 'App activity missing'); sys.exit(0 if ok else 1)"
             test -s startup-pid.txt || (echo "Sandboxr process is not running after launch."; exit 1)
             echo "Sandboxr remained running after startup."
