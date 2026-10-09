@@ -64,6 +64,48 @@ jobs:
           "$APKSIGNER" sign --ks sandboxr-release.jks --ks-pass pass:sandboxr-build --key-pass pass:sandboxr-build --out Sandboxr-pt-BR-release.apk app-release-aligned.apk
           "$APKSIGNER" verify --verbose Sandboxr-pt-BR-release.apk
 
+      - name: Smoke-test app startup on Android emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 36
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            set -u
+            adb logcat -c
+            adb install -r Sandboxr-pt-BR-release.apk
+            adb shell am force-stop com.ujwal.sandboxr
+            adb shell am start -W -n com.ujwal.sandboxr/.MainActivity
+            sleep 15
+            adb logcat -d -b all -v threadtime > startup-logcat.txt
+            adb shell dumpsys activity activities > startup-activities.txt
+            adb shell pidof com.ujwal.sandboxr > startup-pid.txt || true
+            if grep -E "FATAL EXCEPTION|Fatal signal|Process: com\\.ujwal\\.sandboxr" startup-logcat.txt; then
+              echo "Startup smoke test detected an app crash."
+              exit 1
+            fi
+            if ! grep -q "com.ujwal.sandboxr" startup-activities.txt; then
+              echo "Startup smoke test could not find the app in the activity dump."
+              exit 1
+            fi
+            if [ ! -s startup-pid.txt ]; then
+              echo "Sandboxr process is not running after launch."
+              exit 1
+            fi
+            echo "Sandboxr remained running after startup."
+
+      - name: Upload startup diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sandboxr-startup-diagnostics
+          path: |
+            startup-logcat.txt
+            startup-activities.txt
+            startup-pid.txt
+          if-no-files-found: ignore
+
       - name: Upload signed APK
         uses: actions/upload-artifact@v4
         with:
