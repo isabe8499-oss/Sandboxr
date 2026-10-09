@@ -72,7 +72,7 @@ jobs:
           profile: pixel_6
           disable-animations: true
           script: |
-            set -u
+            adb wait-for-device
             adb logcat -c
             adb install -r Sandboxr-pt-BR-release.apk
             adb shell am force-stop com.ujwal.sandboxr
@@ -81,18 +81,9 @@ jobs:
             adb logcat -d -b all -v threadtime > startup-logcat.txt
             adb shell dumpsys activity activities > startup-activities.txt
             adb shell pidof com.ujwal.sandboxr > startup-pid.txt || true
-            if grep -E "FATAL EXCEPTION|Fatal signal|Process: com\\.ujwal\\.sandboxr" startup-logcat.txt; then
-              echo "Startup smoke test detected an app crash."
-              exit 1
-            fi
-            if ! grep -q "com.ujwal.sandboxr" startup-activities.txt; then
-              echo "Startup smoke test could not find the app in the activity dump."
-              exit 1
-            fi
-            if [ ! -s startup-pid.txt ]; then
-              echo "Sandboxr process is not running after launch."
-              exit 1
-            fi
+            python3 -c "import pathlib,re,sys; s=pathlib.Path('startup-logcat.txt').read_text(errors='ignore'); bad=re.search(r'FATAL EXCEPTION|Fatal signal|Process: com\\.ujwal\\.sandboxr',s); print('Crash signature detected' if bad else 'No crash signature found'); sys.exit(1 if bad else 0)"
+            python3 -c "import pathlib,sys; s=pathlib.Path('startup-activities.txt').read_text(errors='ignore'); ok='com.ujwal.sandboxr' in s; print('App activity found' if ok else 'App activity missing'); sys.exit(0 if ok else 1)"
+            test -s startup-pid.txt || (echo "Sandboxr process is not running after launch."; exit 1)
             echo "Sandboxr remained running after startup."
 
       - name: Upload startup diagnostics
