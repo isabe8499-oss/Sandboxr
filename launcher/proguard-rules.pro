@@ -8,6 +8,11 @@
 -allowaccessmodification
 
 # Selectively allow shrinking and optimization for key launcher packages
+# LauncherApplication is the runtime superclass of SandboxrApplication declared in the app manifest.
+# It must never be removed while shrinking this library: the app's manifest and Kotlin
+# subclass are loaded by Android before any Activity can start.
+-keep class com.sandboxr.launcher.LauncherApplication { *; }
+
 -keep,allowshrinking,allowoptimization,allowaccessmodification class com.sandboxr.launcher.** { *; }
 -keep,allowshrinking,allowoptimization,allowaccessmodification class com.android.launcher3.** { *; }
 -keep,allowshrinking,allowoptimization class com.android.systemui.shared.** { *; }
