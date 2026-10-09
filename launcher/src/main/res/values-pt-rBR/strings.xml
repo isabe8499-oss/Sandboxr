@@ -470,4 +470,61 @@
     <string name="widget_add_to_homescreen_button_label" msgid="5293968342564702338">"Adicionar à tela inicial"</string>
     <string name="widget_cancel_pin_button_label" msgid="7548758841712339886">"Cancelar"</string>
     <string name="widget_touch_hold_instruction" msgid="7360267776497592789">"Toque e segure para mover um widget."</string>
+
+    <!-- Traduções adicionais para completar a interface em português do Brasil -->
+    <string name="derived_app_name">Sandboxr</string>
+    <string name="notification_dots_desc_permission_needed">Permissão de notificações não concedida</string>
+    <string name="settings_fragment_name" translatable="false">com.sandboxr.launcher.settings.SettingsActivity$LauncherSettingsFragment</string>
+    <bool name="config_largeHeap">true</bool>
+    <string-array name="filtered_components" />
+    <string name="squircle_shape_title">Quadrado arredondado</string>
+    <string name="search_hint">Pesquisar apps, internet e mais</string>
+    <string name="qsb_voice_search">Pesquisa por voz</string>
+    <string name="qsb_lens_search">Google Lens</string>
+    <string name="reconfigure_drop_target_label">Configurar</string>
+    <string name="cancel_drop_target_label">Cancelar</string>
+    <string name="app_pair_save_toast">Par de apps salvo na tela inicial</string>
+    <string name="app_pair_launch_error">Não foi possível abrir o par de apps em tela dividida</string>
+    <string name="taskbar_pin_limit_reached">Número máximo de itens fixados na barra de tarefas</string>
+    <string name="storage_scopes_drop_target_label">Permissões de armazenamento</string>
+    <string name="contact_scopes_label">Permissões de contatos</string>
+    <string name="wallpaper_picker_package" translatable="false">com.android.wallpaper</string>
+    <string name="split_screen_position_top">Parte superior</string>
+    <string name="split_screen_position_bottom">Parte inferior</string>
+    <string name="split_screen_position_left">Esquerda</string>
+    <string name="split_screen_position_right">Direita</string>
+    <string-array name="skip_private_profile_shortcut_packages" />
+    <string name="settings_folder_creation">Criar pasta</string>
+    <string name="work_profile_edu_section" translatable="false">ⓘ</string>
+    <string name="work_profile_scheduler_intent" translatable="false" />
+    <string name="topic_category_games">Jogos</string>
+    <string name="topic_category_audio">Áudio</string>
+    <string name="topic_category_video">Vídeos</string>
+    <string name="topic_category_image">Imagens</string>
+    <string name="topic_category_social">Redes sociais</string>
+    <string name="topic_category_news">Notícias</string>
+    <string name="topic_category_maps">Mapas</string>
+    <string name="topic_category_productivity">Produtividade</string>
+    <string name="topic_category_accessibility">Acessibilidade</string>
+    <string name="topic_category_most_used">Mais usados</string>
+    <string name="topic_category_other">Outros</string>
+    <string name="workspace_functions_app_display_description">Ferramenta para gerenciar o espaço de trabalho</string>
+    <string name="folder_creator_title">Criar pasta(s)</string>
+    <string name="folder_creator_add">Adicionar</string>
+    <string name="folder_creator_cancel">Cancelar</string>
+    <string name="recents_back">Voltar</string>
+    <string name="gesture_tutorial_close_button_content_description">Fechar</string>
+    <string name="assistant_gesture_tutorial_playground_title">Tutorial: Assistente</string>
+    <string name="assistant_gesture_tutorial_playground_subtitle">Deslize na diagonal a partir de um dos cantos inferiores da tela</string>
+    <string name="assistant_gesture_feedback_swipe_too_far_from_corner">Comece o gesto em um dos cantos inferiores da tela.</string>
+    <string name="assistant_gesture_feedback_swipe_not_diagonal">Faça o gesto na diagonal.</string>
+    <string name="assistant_gesture_feedback_swipe_not_long_enough">Deslize um pouco mais.</string>
+    <string name="sandbox_mode_title">Modo de teste de gestos</string>
+    <string name="sandbox_mode_subtitle">Experimente qualquer gesto de navegação</string>
+    <string name="sandbox_mode_back_gesture_feedback_successful">Gesto de voltar realizado com sucesso</string>
+    <string name="sandbox_mode_assistant_gesture_feedback_successful">Gesto do Assistente realizado com sucesso</string>
+    <string name="sandbox_mode_home_gesture_feedback_successful">Gesto de início realizado com sucesso</string>
+    <string name="sandbox_mode_overview_gesture_feedback_successful">Gesto de apps recentes realizado com sucesso</string>
+    <string name="sandbox_mode_back_gesture_feedback_swipe_too_far_from_edge">Deslize a partir da borda esquerda ou direita da tela</string>
+
 </resources>
