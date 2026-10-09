@@ -40,7 +40,8 @@ jobs:
               echo "NDK $NDK_VERSION installed successfully"
               exit 0
             fi
-            echo "NDK installation failed on attempt $attempt"
+            echo "NDK installation failed on attempt $attempt; clearing partial SDK downloads"
+            rm -rf "$ANDROID_HOME/.downloadIntermediates" "$ANDROID_HOME/.temp" "$ANDROID_HOME/ndk/$NDK_VERSION"
             if [ "$attempt" -lt 3 ]; then sleep 10; fi
           done
           echo "Unable to install NDK $NDK_VERSION after 3 attempts" >&2
